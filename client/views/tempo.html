@@ -1,0 +1,51 @@
+<template name="tempo">
+    {{> header}}
+
+    <div class="container">
+        <div class="row">
+
+            <form class="form-horizontal">
+                <fieldset>
+                    <div id="legend" class="">
+                        <legend class="">
+                            Quanto tempo de fila?
+                        </legend>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Local</label>
+                        <div class="controls">
+                            <input type="text" placeholder="Procurar" class="input-xlarge search-query">
+                            <p class="help-block">
+                                Procure o lugar ou estabelecimento.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                      <label class="control-label">Tempo de espera</label>
+                      <div class="controls">
+                        <div class="input-append">
+                          <input class="span2" placeholder="placeholder" type="text">
+                          <span class="add-on">minutos</span>
+                        </div>
+                        <p class="help-block">Escolha o tempo de espera antes de ser atendido.</p>
+                      </div>
+                    </div>
+
+                    <div class="control-group">
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">
+                                Salvar
+                            </button>
+                            <button type="button" class="btn">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+</template>

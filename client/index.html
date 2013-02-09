@@ -1,0 +1,54 @@
+<head>
+    <title>Filas</title>
+</head>
+
+<body></body>
+
+<template name="header">
+    <div class="navbar nav">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
+                	<span class="icon-bar"></span> 
+                	<span class="icon-bar"></span> 
+                	<span class="icon-bar"></span> 
+                </a>
+                <a class="brand" href="/">Filas</a>
+
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li class="divider-vertical"></li>
+                        <li>
+                            <a href="/"><i class="icon-home"></i> Home</a>
+                        </li>
+                        <li>
+                            <a href="/tempo"><i class="icon-upload"></i> Enviar um tempo</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="index">
+	{{> header}}
+	<div class="container">
+        <div class="row">
+			<div class="hero-unit">
+			    <h1>Filas</h1>
+			    <p>Veja quanto tempo você vai ficar esperando na fila!</p>
+			    <p>
+			      <a class="btn btn-success btn-large" href="/procurar">
+			        Procurar estabelecimento
+			      </a>
+			    </p>
+			    <p>
+                  <a class="btn btn-info btn-large" href="/tempo">
+                    Inserir tempo
+                  </a>
+                </p>
+			</div>
+		</div>
+	</div>
+</template>
