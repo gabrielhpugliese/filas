@@ -3,43 +3,25 @@ Template.tempo.events = {
     'click button[type=submit]' : function(event) {
         event.preventDefault();
         var params = {
-            'local': '',
-            'tempo': ''
+            'local': document.getElementsByName('local')[0].value,
+            'tempo': document.getElementsByName('tempo')[0].value
         };
         
-        _.map(params, function(value, param){
-            jQuery('input[name='+param+']').parent().find('.label').hide();
-        });
-        
-        var form_ok = true;
-        _.map(params, function(value, param){
-            var param_value = document.getElementsByName(param)[0].value;
-            if (param_value) {
-                params[param] = param_value;
+        Meteor.call('save_tempo', params, function(error, result){
+            if (result && result['errors']) {
+                _.map(result['errors'], function(value, param){
+                    jQuery('input[name='+param+']').parent().find('.label').text(value).show();
+                });
             } else {
-                var text = '';
-                console.log(param)
-                console.log(parseFloat(param_value))
-                if (param == 'tempo' && (!parseFloat(param_value) || 
-                    parseFloat(param_value) < 0)) {
-                    text = 'Precisa ser maior que 0';
-                } else {
-                    text = 'Necessário';
-                }
-                jQuery('input[name='+param+']').parent().find('.label').text(text).show();
-                form_ok = false;
+                jQuery('#success').show();
+                Meteor.setTimeout(function(){
+                    jQuery('#success').fadeOut('slow');
+                }, 10000);
+                _.map(params, function(value, param){
+                    jQuery('input[name='+param+']').val('');
+                    jQuery('input[name='+param+']').parent().find('.label').hide();
+                });
             }
         });
-        if (!form_ok) 
-            return;
-        
-        Tempos.insert(params);
-        document.getElementsByName('local')[0].value = '';
-        document.getElementsByName('tempo')[0].value = '';
-        
-        jQuery('#success').show();
-        Meteor.setTimeout(function(){
-            jQuery('#success').fadeOut('slow');
-        }, 10000);
     }
 }
