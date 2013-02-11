@@ -4,7 +4,7 @@
 
 <body></body>
 
-<template name="header">
+<template name="layout">
     <div class="navbar nav">
         <div class="navbar-inner">
             <div class="container">
@@ -19,36 +19,41 @@
                     <ul class="nav">
                         <li class="divider-vertical"></li>
                         <li>
-                            <a href="/"><i class="icon-home"></i> Home</a>
+                            <a href="{{indexPath}}"><i class="icon-home"></i> Home</a>
                         </li>
                         <li>
-                            <a href="/tempo"><i class="icon-upload"></i> Enviar um tempo</a>
+                            <a href="{{tempoPath}}"><i class="icon-upload"></i> Enviar um tempo</a>
+                        </li>
+                        <li>
+                            <a href="{{locaisPath}}"><i class="icon-align-left"></i> Ver estabelecimentos</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+        {{{ yield }}}
+        </div>
+    </div>
 </template>
 
 <template name="index">
-	{{> header}}
-	<div class="container">
-        <div class="row">
-			<div class="hero-unit">
-			    <h1>Filas</h1>
-			    <p>Veja quanto tempo você vai ficar esperando na fila!</p>
-			    <p>
-			      <a class="btn btn-success btn-large" href="/procurar">
-			        Procurar estabelecimento
-			      </a>
-			    </p>
-			    <p>
-                  <a class="btn btn-info btn-large" href="/tempo">
-                    Inserir tempo
-                  </a>
-                </p>
-			</div>
-		</div>
+
+	<div class="hero-unit">
+	    <h1>Filas</h1>
+	    <p>Veja quanto tempo você vai ficar esperando na fila!</p>
+	    <p>
+	      <a class="btn btn-success btn-large" href="{{locaisPath}}">
+	        Procurar estabelecimento
+	      </a>
+	    </p>
+	    <p>
+          <a class="btn btn-info btn-large" href="{{tempoPath}}">
+            Inserir tempo
+          </a>
+        </p>
 	</div>
+
 </template>

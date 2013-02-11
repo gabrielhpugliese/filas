@@ -1,61 +1,55 @@
 <template name="tempo">
-    {{> header}}
 
-    <div class="container">
-        <div class="row">
+    <form class="form-horizontal">
+        <fieldset>
+            <div id="legend" class="">
+                <legend class="">
+                    Quanto tempo de fila?
+                </legend>
+            </div>
+            <div id="success" class="alert alert-success" style="display: none;">
+			    <h4>Tempo salvo!
+			    </h4>
+			    <p>Obrigado por colaborar. </p>
+			    <p>Será de bom uso para diversos usuários! :)</p>
+			</div>
+            <div class="control-group">
+                <label class="control-label">Local</label>
+                <div class="controls">
+                    <input type="text" placeholder="Procurar" name="local" class="input-xlarge search-query">
+                    <span class="label label-important" style="display: none;">
+                    </span>
+                    <p class="help-block">
+                        Procure o lugar ou estabelecimento.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="control-group">
+              <label class="control-label">Tempo de espera</label>
+              <div class="controls">
+                <div class="input-append">
+                  <input class="span2" placeholder="Tempo" name="tempo" type="text">
+                  <span class="add-on">minutos</span>
+                  <span class="label label-important" style="display: none; border-left: 2px;">
+                  </span>
+                </div>
+                <p class="help-block">Escolha o tempo de espera antes de ser atendido.</p>
+              </div>
+            </div>
 
-            <form class="form-horizontal">
-                <fieldset>
-                    <div id="legend" class="">
-                        <legend class="">
-                            Quanto tempo de fila?
-                        </legend>
-                    </div>
-                    <div id="success" class="alert alert-success" style="display: none;">
-					    <h4>Tempo salvo!
-					    </h4>
-					    <p>Obrigado por colaborar. </p>
-					    <p>Será de bom uso para diversos usuários! :)</p>
-					</div>
-                    <div class="control-group">
-                        <label class="control-label">Local</label>
-                        <div class="controls">
-                            <input type="text" placeholder="Procurar" name="local" class="input-xlarge search-query">
-                            <span class="label label-important" style="display: none;">
-                            </span>
-                            <p class="help-block">
-                                Procure o lugar ou estabelecimento.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="control-group">
-                      <label class="control-label">Tempo de espera</label>
-                      <div class="controls">
-                        <div class="input-append">
-                          <input class="span2" placeholder="Tempo" name="tempo" type="text">
-                          <span class="add-on">minutos</span>
-                          <span class="label label-important" style="display: none; border-left: 2px;">
-                          </span>
-                        </div>
-                        <p class="help-block">Escolha o tempo de espera antes de ser atendido.</p>
-                      </div>
-                    </div>
+            <div class="control-group">
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        Salvar
+                    </button>
+                    <button type="button" class="btn">
+                        Cancel
+                    </button>
+                </div>
+            </div>
 
-                    <div class="control-group">
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-primary">
-                                Salvar
-                            </button>
-                            <button type="button" class="btn">
-                                Cancel
-                            </button>
-                        </div>
-                    </div>
-
-                </fieldset>
-            </form>
-        </div>
-    </div>
+        </fieldset>
+    </form>
 
 </template>
