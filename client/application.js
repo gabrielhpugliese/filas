@@ -1,8 +1,5 @@
-if (Meteor.isClient) {
-    Meteor.startup(function(){
-        Meteor.autosubscribe(function(){
-            Meteor.subscribe('Medias');
-            Meteor.subscribe('Tempos');
-        });
-    });
-}
+Session.set('MediasLoading', true);
+Meteor.subscribe('Medias', function(){
+    Session.set('MediasLoading', false);
+});
+Meteor.subscribe('Tempos');

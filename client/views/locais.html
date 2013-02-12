@@ -1,8 +1,9 @@
 <template name="locais">
 	<h1>Top 10 maiores tempos</h1>
-	<ul>
-	    {{#each top10}}
-	    <li>{{local}}: {{tempo}} minutos</li>
-	    {{/each}}
-	</ul>
+    {{#each top10}}
+    <strong>{{local}}</strong><span class="pull-right">{{tempo}} minutos</span>
+    <div class="progress progress-warning active">
+        <div class="bar" style="width: {{perc}}%;"></div>
+    </div>
+    {{/each}}
 </template>

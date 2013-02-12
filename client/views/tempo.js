@@ -2,6 +2,11 @@
 Template.tempo.events = {
     'click button[type=submit]' : function(event) {
         event.preventDefault();
+        if (!Meteor.user()){
+            jQuery('#login-modal').modal();
+            return;
+        }
+        
         var params = {
             'local': document.getElementsByName('local')[0].value,
             'tempo': document.getElementsByName('tempo')[0].value
